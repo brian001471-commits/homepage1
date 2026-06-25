@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,17 +14,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "주식회사 나눔랩 | Smart Coat-Ops & 기능성 화학 소재 전문 기업",
-  description: "경험에 의존하던 코팅 품질 관리, 이제 AI 데이터로 확실하게 예측하십시오. 제조업 기반의 탄탄한 화학 기술과 첨단 ICT 시스템의 결합, 나눔랩.",
+  title: "주식회사 나눔랩 | AI · DX 솔루션 전문 기업",
+  description:
+    "응용 소프트웨어 개발 및 AI 기반 디지털 전환(DX)을 선도하는 나눔랩. 범용 AI 솔루션, DX 컨설팅, 지역산업 DX 확산, AI 실무 교육을 제공합니다.",
   keywords: [
     "나눔랩",
     "Nanum Lab",
-    "Smart Coat-Ops",
-    "화학 코팅제",
-    "표면 제어",
-    "AI 품질 예측",
-    "예지보전 솔루션",
-    "KOLAS 성적서",
+    "AI 솔루션",
+    "DX 컨설팅",
+    "디지털 전환",
+    "응용 소프트웨어",
+    "AI 실무 교육",
+    "지역산업 DX",
   ],
 };
 
@@ -37,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-brand-dark text-slate-200 min-h-screen selection:bg-brand-cyan/20 selection:text-brand-cyan`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
