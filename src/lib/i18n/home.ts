@@ -64,9 +64,30 @@ export const homeTranslations = {
         "AI 솔루션 개발 및 DX 프로젝트 성과를 데이터 바인딩 패턴으로 연계한 신뢰성 지표 정보망입니다.",
       confirmed: "CONFIRMED DATA",
       cards: [
-        { title: "빈칸", category: "빈칸", metric: "빈칸", description: "빈칸", tag: "빈칸" },
-        { title: "빈칸", category: "빈칸", metric: "빈칸", description: "빈칸", tag: "빈칸" },
-        { title: "빈칸", category: "빈칸", metric: "빈칸", description: "빈칸", tag: "빈칸" },
+        {
+          title: "공공·관광 분야 DX 로드맵 수립",
+          category: "PUBLIC · TOURISM DX",
+          metric: "DX 로드맵 수립",
+          description:
+            "데이터 기반의 업무 프로세스 진단을 통해 공공 행정과 관광 산업의 디지털 전환 전략을 설계하고 성공적으로 수행하였습니다.",
+          tag: "전략 수행",
+        },
+        {
+          title: "현장 맞춤형 AI 자동화 솔루션",
+          category: "AI AUTOMATION",
+          metric: "운영 효율 극대화",
+          description:
+            "현장의 복잡한 업무를 자동화하는 지능형 알고리즘과 설명 가능한 AI(XAI) 기술을 도입하여 운영 효율을 극대화하였습니다.",
+          tag: "XAI 도입",
+        },
+        {
+          title: "지역 산업 DX 확산 거버넌스",
+          category: "REGIONAL DX",
+          metric: "DX 생태계 조성",
+          description:
+            "지역 혁신 거버넌스와 연계하여 산업군별 디지털 경쟁력을 강화하고, 실무 인재 양성 교육을 통해 DX 생태계를 조성합니다.",
+          tag: "거버넌스",
+        },
       ],
     },
     footer: {
@@ -139,9 +160,30 @@ export const homeTranslations = {
         "A reliability index network linking AI solution development and DX project outcomes.",
       confirmed: "CONFIRMED DATA",
       cards: [
-        { title: "Blank", category: "Blank", metric: "Blank", description: "Blank", tag: "Blank" },
-        { title: "Blank", category: "Blank", metric: "Blank", description: "Blank", tag: "Blank" },
-        { title: "Blank", category: "Blank", metric: "Blank", description: "Blank", tag: "Blank" },
+        {
+          title: "DX Roadmap for Public & Tourism Sectors",
+          category: "PUBLIC · TOURISM DX",
+          metric: "DX Roadmap",
+          description:
+            "We designed and successfully executed digital transformation strategies for public administration and tourism through data-driven workflow diagnosis.",
+          tag: "Strategy",
+        },
+        {
+          title: "Field-Tailored AI Automation Solutions",
+          category: "AI AUTOMATION",
+          metric: "Efficiency Boost",
+          description:
+            "We maximized operational efficiency by introducing intelligent algorithms and explainable AI (XAI) that automate complex field workflows.",
+          tag: "XAI",
+        },
+        {
+          title: "Regional Industry DX Governance",
+          category: "REGIONAL DX",
+          metric: "DX Ecosystem",
+          description:
+            "We connect with regional innovation governance to strengthen digital competitiveness by industry and foster a DX ecosystem through practical workforce training.",
+          tag: "Governance",
+        },
       ],
     },
     footer: {

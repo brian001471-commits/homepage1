@@ -154,7 +154,7 @@ export default function Home() {
             </div>
 
             <h1
-              className={`font-extrabold tracking-tight text-white max-w-7xl mx-auto font-sans break-keep ${
+              className={`font-extrabold tracking-tight text-white max-w-7xl mx-auto font-sans break-keep drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)] ${
                 locale === "en"
                   ? "text-[1.75rem] sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.2]"
                   : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.15]"
@@ -172,7 +172,7 @@ export default function Home() {
             </h1>
 
             <p
-              className={`text-slate-400 max-w-3xl mx-auto font-normal leading-relaxed ${
+              className={`text-[#FFE66D] max-w-3xl mx-auto font-extrabold leading-relaxed bg-black/45 border border-[#FFE66D]/25 rounded-2xl px-5 py-3 shadow-[0_0_28px_rgba(0,0,0,0.75)] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)] ${
                 locale === "en"
                   ? "text-xs sm:text-sm md:text-base px-2"
                   : "text-sm md:text-[0.9375rem] leading-snug"
@@ -199,7 +199,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-brand-cyan transition-colors duration-200">
+        <div className="absolute bottom-3 md:bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-brand-cyan transition-colors duration-200">
           <span className="text-[10px] tracking-widest font-mono">{homeT.hero.scroll}</span>
           <div className="w-1.5 h-6 rounded-full border border-slate-600 flex justify-center p-0.5">
             <motion.div
@@ -248,25 +248,25 @@ export default function Home() {
                   {/* Category Badge & Tag */}
                   <div className="flex justify-between items-center text-[10px] font-mono font-bold">
                     <span className="text-brand-cyan tracking-widest">{card.category}</span>
-                    <span className="bg-slate-900/60 px-2 py-0.5 rounded text-slate-450 border border-slate-800">
+                    <span className="bg-slate-900/60 px-2 py-0.5 rounded text-slate-300 border border-slate-800">
                       {card.tag}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-white group-hover:text-brand-cyan transition-colors duration-200">
+                  <h3 className="text-lg font-bold text-white group-hover:text-brand-cyan transition-colors duration-200 leading-snug">
                     {card.title}
                   </h3>
 
                   {/* Quantitative Metric Callout */}
                   <div className="py-2">
-                    <span className="text-2xl md:text-3xl font-black text-white font-mono bg-slate-900/40 border border-slate-800/80 px-4 py-1.5 rounded-xl block text-center text-glow-cyan text-brand-cyan">
+                    <span className="text-2xl md:text-3xl font-black text-white font-mono bg-slate-900/40 border border-slate-800/80 px-4 py-2 rounded-xl block text-center text-glow-cyan text-brand-cyan">
                       {card.metric}
                     </span>
                   </div>
 
                   {/* Detailed Copy */}
-                  <p className="text-xs text-slate-450 leading-relaxed font-normal">
+                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
                     {card.description}
                   </p>
                 </div>
