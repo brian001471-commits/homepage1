@@ -1,18 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { AboutSection } from "@/components/AboutSection";
+import { motion } from "framer-motion";
 import { ProcessSection } from "@/components/ProcessSection";
 import { LocationSection } from "@/components/LocationSection";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import {
-  Activity,
-  ArrowUp
-} from "lucide-react";
+import { Activity } from "lucide-react";
 
 const HERO_VIDEO_SRC = "/videos/hero-bg.mp4";
 
@@ -40,99 +35,8 @@ export default function Home() {
   const { locale } = useLanguage();
   const { nav: navT, home: homeT } = useTranslations();
 
-  // Navigation active state
-  const [activeSection, setActiveSection] = useState("hero");
-
-  // Back to Top button show state
-  const [showScrollButton, setShowScrollButton] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // Tracking active section on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["hero", "about", "process", "research"];
-      const scrollPos = window.scrollY + 250;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-
-      // Show back to top button after 500px scroll
-      if (window.scrollY > 500) {
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="relative min-h-screen bg-brand-dark overflow-hidden flex flex-col">
-      {/* Top Navbar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/85 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-[#00F0FF] text-2xl font-black tracking-widest text-glow-cyan">
-              NANUM LAB
-            </span>
-            <div className="w-[1px] h-4 bg-slate-700 hidden sm:block"></div>
-            <span className="text-[10px] text-slate-400 font-mono tracking-widest hidden sm:block">
-              INTEGRATED WEB PLATFORM
-            </span>
-          </div>
-
-          {/* Desktop Nav + Language + CTA */}
-          <div className="flex items-center gap-5 md:gap-8">
-            <nav className="hidden md:flex items-center gap-8">
-              {[
-                { id: "hero", label: navT.home },
-                { id: "about", label: navT.about },
-                { id: "research", label: navT.research },
-              ].map((link) => (
-                <a
-                  key={link.id}
-                  href={`#${link.id}`}
-                  className={`text-[18px] font-extrabold tracking-tight transition-colors duration-200 hover:text-brand-cyan ${
-                    activeSection === link.id ? "text-brand-cyan" : "text-slate-400"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Link
-                href="/tech"
-                className="text-[18px] font-extrabold tracking-tight transition-colors duration-200 hover:text-brand-cyan text-slate-400"
-              >
-                {navT.coreTech}
-              </Link>
-            </nav>
-
-            <LanguageSwitcher />
-
-            <Link
-              href="/demo"
-              className="text-[16px] font-extrabold tracking-tight text-brand-cyan border border-brand-cyan/40 px-6 py-2.5 rounded-full hover:bg-brand-cyan/10 transition-all duration-200"
-            >
-              {navT.contact}
-            </Link>
-          </div>
-        </div>
-      </header>
-
       {/* [1층] 메인 히어로 섹션 (Hero Section) */}
       <section
         id="hero"
@@ -211,8 +115,6 @@ export default function Home() {
         </div>
       </section>
 
-      <AboutSection />
-
       <ProcessSection />
 
       {/* [4층] 연구 성과 & 포트폴리오 아카이브 (Research & Insights) */}
@@ -288,22 +190,6 @@ export default function Home() {
           <p className="text-[12px] text-white font-mono">{homeT.footer.address}</p>
         </div>
       </footer>
-
-      {/* Back to Top Button */}
-      <AnimatePresence>
-        {showScrollButton && (
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-slate-900/80 border border-brand-cyan/40 hover:border-brand-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.5)] text-brand-cyan transition-all duration-300 backdrop-blur-sm cursor-pointer"
-            aria-label={homeT.backToTop}
-          >
-            <ArrowUp className="w-5 h-5" />
-          </motion.button>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

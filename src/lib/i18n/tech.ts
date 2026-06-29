@@ -2,62 +2,89 @@ import type { Locale } from "@/contexts/LanguageContext";
 
 export const techTranslations = {
   ko: {
-    badge: "NANUM LAB AI PLATFORM",
-    title: "핵심 기술 솔루션",
-    description:
-      "나눔랩은 데이터 기반의 의사결정과 현장 최적화 DX 아키텍처를 통해 비즈니스의 디지털 전환을 가속화합니다. 복잡한 데이터를 누구나 이해할 수 있는 언어로 변환하는 AI 기술로 귀사의 혁신을 지원합니다.",
-    backToHome: "홈으로",
-    cards: [
+    badge: "CORE TECHNOLOGY",
+    title: "핵심 기술 역량",
+    slogan: "현장과 소통하는 실용적 AI 기술로 디지털 전환을 완성합니다.",
+    capabilities: [
       {
-        title: "AI 데이터 분석 및 머신러닝",
-        description:
-          "정형·비정형 데이터를 통합 분석하여 성과를 최적화하는 플랫폼 기술과 비즈니스 현장 맞춤형 지능형 알고리즘을 공급합니다.",
+        id: "ai-nlp",
+        title: "AI & 자연어 처리",
+        keywords: [
+          "LLM 챗봇",
+          "RAG 파이프라인",
+          "지식 검색",
+          "Tool Calling 업무 자동화",
+          "벡터 DB",
+        ],
       },
       {
-        title: "통합 빅데이터 플랫폼(Data Lake)",
-        description:
-          "데이터 수집부터 분석, 워크플로우 시각화까지 데이터 전 생애주기를 관리하여 실질적인 비즈니스 인사이트를 도출합니다.",
+        id: "voice-vision",
+        title: "음성 및 시각 지능",
+        keywords: [
+          "실시간 STT",
+          "비정형 데이터 전처리",
+          "증빙자료 정밀 추출용 고성능 OCR",
+          "위성 및 공간 데이터 분석",
+        ],
       },
       {
-        title: "현장 맞춤형 소통형 AI(XAI)",
+        id: "philosophy",
+        title: "현장 중심 프로세스 설계",
         description:
-          "AI 분석 결과를 누구나 이해할 수 있는 언어로 변환하여, 기술 도입 장벽을 낮추고 자율적인 운영 환경을 구축합니다.",
-      },
-      {
-        title: "일의 속도를 높이는 '스마트 업무 최적화'",
-        description:
-          "기술 도입보다 중요한 것은 일하는 방식의 변화입니다. 나눔랩은 귀사의 업무 현장을 정밀하게 분석하여, 기술이 가장 자연스럽게 스며들도록 최적의 업무 흐름을 설계합니다.",
+          "기술 편의주의를 배제하고 프로그래밍 지식이 없는 현장 직원도 쉽게 다룰 수 있도록 '일하는 방식'을 먼저 살펴 맞춤형 프로세스로 설계합니다.",
       },
     ],
+    xai: {
+      badge: "NANUM LAB DIFFERENTIATOR",
+      title: "설명 가능한 AI (XAI)",
+      subtitle: "현장과 소통하는 차별화 기술",
+      description:
+        "복잡한 AI 분석 결과나 이상 징후 원인을 일방적으로 통보하지 않고, 작업자가 이해할 수 있는 '현장 언어'로 대화하듯 쉽게 풀어 설명하는 소통형 기술 모듈입니다.",
+    },
+    backToHome: "홈으로",
   },
   en: {
-    badge: "NANUM LAB AI PLATFORM",
-    title: "Core Technology Solutions",
-    description:
-      "Nanum Lab accelerates business digital transformation through data-driven decision-making and field-optimized DX architecture. We support your innovation with AI that translates complex data into language everyone can understand.",
-    backToHome: "Back to Home",
-    cards: [
+    badge: "CORE TECHNOLOGY",
+    title: "Core Technology Capabilities",
+    slogan:
+      "We complete digital transformation with practical AI technology that communicates with the field.",
+    capabilities: [
       {
-        title: "AI Data Analytics & Machine Learning",
-        description:
-          "We deliver platform technology that integrates structured and unstructured data analysis for performance optimization, plus intelligent algorithms customized for your business operations.",
+        id: "ai-nlp",
+        title: "AI & Natural Language Processing",
+        keywords: [
+          "LLM Chatbots",
+          "RAG Pipelines",
+          "Knowledge Search",
+          "Tool Calling Automation",
+          "Vector Databases",
+        ],
       },
       {
-        title: "Integrated Big Data Platform (Data Lake)",
-        description:
-          "We manage the full data lifecycle — from collection and analysis to workflow visualization — to deliver actionable business insights.",
+        id: "voice-vision",
+        title: "Voice & Visual Intelligence",
+        keywords: [
+          "Real-time STT",
+          "Unstructured Data Preprocessing",
+          "High-performance OCR for Evidence Extraction",
+          "Satellite & Spatial Data Analysis",
+        ],
       },
       {
-        title: "Explainable AI (XAI)",
+        id: "philosophy",
+        title: "Field-Centered Process Design",
         description:
-          "We translate AI analysis results into plain language, lowering adoption barriers and building autonomous operational environments.",
-      },
-      {
-        title: "Field-Centered Smart DX Architecture",
-        description:
-          "More important than introducing technology is changing the way work happens. Nanum Lab analyzes your field operations in detail and designs optimal workflows so technology can fit naturally into daily work.\n\nField-tailored process design: We restructure workflows in the way your actual field needs.\n\nPractical efficiency gains: Instead of complex systems, we build intuitive environments that operators can use comfortably.\n\nSustainable operation support: We stay with you after implementation so the technology can operate reliably.",
+          "We reject technology for its own sake—first understanding how work actually happens, then designing tailored processes so field staff without programming knowledge can use the system with ease.",
       },
     ],
+    xai: {
+      badge: "NANUM LAB DIFFERENTIATOR",
+      title: "Explainable AI (XAI)",
+      subtitle: "Differentiated technology that speaks with the field",
+      description:
+        "Rather than one-way alerts about complex AI analysis or anomaly causes, our conversational module explains outcomes in plain 'field language' that operators can understand and act on.",
+    },
+    backToHome: "Back to Home",
   },
 } as const satisfies Record<Locale, object>;
 

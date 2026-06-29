@@ -1,5 +1,4 @@
 import { DemoIntakeForm } from "@/components/DemoIntakeForm";
-import { DemoPageHeader } from "@/components/DemoPageHeader";
 
 export const metadata = {
   title: "문의하기 | 주식회사 나눔랩",
@@ -10,9 +9,7 @@ export const metadata = {
 export default function DemoPage() {
   return (
     <div className="min-h-screen bg-brand-dark flex flex-col">
-      <DemoPageHeader />
-
-      <main className="flex-1 py-16 md:py-24 px-6">
+      <main className="flex-1 pt-20 py-16 md:py-24 px-6">
         <DemoIntakeForm />
       </main>
 

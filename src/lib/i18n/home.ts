@@ -14,46 +14,35 @@ export const homeTranslations = {
       downloadPdf: "서비스 소개서(PDF) 다운로드",
       scroll: "SCROLL TO EXPLORE",
     },
-    about: {
-      badge: "ABOUT NANUM LAB",
-      title: "회사소개",
-      subtitle: "데이터로 여는 지능형 비즈니스의 미래, 나눔랩",
-      body: "나눔랩은 응용 소프트웨어 개발 및 AI 기반의 디지털 전환(DX)을 선도하는 기술 전문 기업입니다. 우리는 공공기관과 기업의 업무 프로세스를 데이터 기반으로 진단하고, 현장에 최적화된 맞춤형 AI 자동화 솔루션을 제공합니다. 복잡한 데이터 속에서 가치를 찾아내는 나눔랩의 기술력은 귀사의 비즈니스 효율을 극대화하고, 지속 가능한 혁신을 지원하는 강력한 파트너가 될 것입니다.",
-      capabilities: [
-        {
-          title: "데이터 기반 의사결정 체계",
-          description:
-            "정형·비정형 데이터를 통합 분석하는 플랫폼 기술을 통해, 직관이 아닌 객관적 데이터에 근거한 성공적인 비즈니스 성과를 창출합니다.",
-        },
-        {
-          title: "현장 중심 DX 아키텍처",
-          description:
-            "단순히 기술을 도입하는 것을 넘어, 고객의 업무 현장을 정밀하게 설계하여 최적화된 프로세스를 구축하고 지능형 운영 환경을 지원합니다.",
-        },
-      ],
-    },
     process: {
-      badge: "OUR PROCESS",
-      title: "나눔랩과 함께하는 과정",
-      subtitle: "고객의 DX 여정을 체계적으로 설계하고, 현장까지 함께합니다.",
+      badge: "BUILD PROCESS",
+      title: "체계적이고 안정적인 AI 서비스 구축 프로세스",
+      subtitle:
+        "기획부터 튜닝, 배포까지 나눔랩의 베테랑 전문 인력이 엔드투엔드(End-to-End)로 함께합니다.",
       steps: [
         {
           step: "01",
-          title: "요구사항 분석 및 계획 수립",
+          title: "AI 서비스 기획",
           description:
-            "고객의 현안을 정밀하게 분석하여 비즈니스 목표에 부합하는 최적의 DX 전략을 수립합니다.",
+            "고객사의 비즈니스 환경과 데이터 구조를 정밀 진단하여, 도입 가능한 최적의 AI 모델과 요구사항을 정의합니다.",
         },
         {
           step: "02",
-          title: "디자인 및 맞춤 개발",
+          title: "데이터 학습 및 모델 튜닝",
           description:
-            "기획된 DX 로드맵을 바탕으로 고객사와 긴밀히 협업하여 최적의 솔루션을 설계하고 개발합니다.",
+            "수집된 데이터를 전처리하고, LLM, STT, OCR 등 핵심 AI 알고리즘을 현장 도메인 지식에 맞춰 정밀 파인튜닝합니다.",
         },
         {
           step: "03",
-          title: "테스트 및 검증",
+          title: "시스템 통합 및 API 연동",
           description:
-            "시스템 도입 후 현장에 안정적으로 안착할 수 있도록 철저한 검증과 피드백 과정을 거칩니다.",
+            "기존 업무 시스템 및 데이터베이스와 매끄럽게 연결되도록 고성능 API와 사용자 중심의 관리자 웹/모바일 인터페이스를 구축합니다.",
+        },
+        {
+          step: "04",
+          title: "안정적 배포 및 운영 전환",
+          description:
+            "기관의 보안 정책에 맞춰 클라우드 또는 온프레미스(폐쇄망) 환경에 안전하게 배포하고, 지속적인 모니터링 체계를 수립합니다.",
         },
       ],
     },
@@ -116,46 +105,35 @@ export const homeTranslations = {
       downloadPdf: "Download Brochure (PDF)",
       scroll: "SCROLL TO EXPLORE",
     },
-    about: {
-      badge: "ABOUT NANUM LAB",
-      title: "About Us",
-      subtitle: "The future of intelligent business, opened by data — Nanum Lab",
-      body: "Nanum Lab is a technology company leading applied software development and AI-based digital transformation (DX). We diagnose public and enterprise workflows with data, and deliver customized AI automation solutions optimized for the field. Our technology finds value in complex data, maximizes your business efficiency, and becomes a strong partner for sustainable innovation.",
-      capabilities: [
-        {
-          title: "Data-Driven Decision Framework",
-          description:
-            "Our platform integrates structured and unstructured data analysis to deliver business outcomes grounded in objective data — not intuition.",
-        },
-        {
-          title: "Field-Centered DX Architecture",
-          description:
-            "Beyond technology adoption, we precisely design your operational environment, build optimized processes, and support intelligent operations.",
-        },
-      ],
-    },
     process: {
-      badge: "OUR PROCESS",
-      title: "How We Work With You",
-      subtitle: "We systematically design your DX journey — from strategy to the field.",
+      badge: "BUILD PROCESS",
+      title: "Systematic & Reliable AI Service Build Process",
+      subtitle:
+        "From planning through tuning to deployment—NanumLab's veteran experts accompany you end-to-end.",
       steps: [
         {
           step: "01",
-          title: "Requirements Analysis & Planning",
+          title: "AI Service Planning",
           description:
-            "We analyze your challenges in depth and establish an optimal DX strategy aligned with your business goals.",
+            "We precisely diagnose your business environment and data structure to define the optimal AI models and requirements for adoption.",
         },
         {
           step: "02",
-          title: "Design & Custom Development",
+          title: "Data Training & Model Tuning",
           description:
-            "Based on the DX roadmap, we collaborate closely with your team to design and develop the best-fit solution.",
+            "We preprocess collected data and finely tune core AI algorithms—LLM, STT, OCR—to match field domain knowledge.",
         },
         {
           step: "03",
-          title: "Testing & Validation",
+          title: "System Integration & API Linking",
           description:
-            "We ensure stable adoption in the field through rigorous verification and continuous feedback.",
+            "We build high-performance APIs and user-centered admin web/mobile interfaces that connect seamlessly with existing systems and databases.",
+        },
+        {
+          step: "04",
+          title: "Stable Deployment & Operations",
+          description:
+            "We securely deploy to cloud or on-premises (closed network) environments per agency security policies and establish continuous monitoring.",
         },
       ],
     },
