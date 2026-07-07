@@ -4,34 +4,50 @@ export const techTranslations = {
   ko: {
     badge: "CORE TECHNOLOGY",
     title: "핵심 기술 역량",
-    slogan: "현장과 소통하는 실용적 AI 기술로 디지털 전환을 완성합니다.",
+    slogan: "운영 가능한 AI 서비스를 위한 기술역량",
     capabilities: [
       {
-        id: "ai-nlp",
-        title: "AI & 자연어 처리",
-        keywords: [
-          "LLM 챗봇",
-          "RAG 파이프라인",
-          "지식 검색",
-          "Tool Calling 업무 자동화",
-          "벡터 DB",
-        ],
-      },
-      {
-        id: "voice-vision",
-        title: "음성 및 시각 지능",
-        keywords: [
-          "실시간 STT",
-          "비정형 데이터 전처리",
-          "증빙자료 정밀 추출용 고성능 OCR",
-          "위성 및 공간 데이터 분석",
-        ],
-      },
-      {
-        id: "philosophy",
-        title: "현장 중심 프로세스 설계",
+        id: "frontend",
+        title: "Frontend",
         description:
-          "기술 편의주의를 배제하고 프로그래밍 지식이 없는 현장 직원도 쉽게 다룰 수 있도록 '일하는 방식'을 먼저 살펴 맞춤형 프로세스로 설계합니다.",
+          "공공·기업 고객이 사용하는 대면 화면과 관리자 화면을 안정적으로 구성합니다.",
+        tags: ["React", "Vite", "TypeScript", "Tailwind CSS", "ShadCN UI", "Responsive UI"],
+      },
+      {
+        id: "backend",
+        title: "Backend",
+        description: "업무 로직, 파일 처리, AI 연동, 관리자 기능을 API 중심으로 설계합니다.",
+        tags: ["FastAPI", "Node.js", "REST API", "Auth", "Validation", "Batch Processing"],
+      },
+      {
+        id: "database",
+        title: "Database",
+        description: "문의, 문서, 처리상태, 통계, 사용자 데이터를 구조적으로 저장합니다.",
+        tags: ["PostgreSQL", "Schema Design", "Query Optimization", "Audit Log"],
+      },
+      {
+        id: "ai-ocr",
+        title: "AI/OCR",
+        description: "문서 인식, 요약, 검색, 업무지원 기능을 실제 서비스에 연결합니다.",
+        tags: ["OCR API", "PaddleOCR", "문서AI", "LLM", "RAG", "Embedding", "Prompt Workflow"],
+      },
+      {
+        id: "infra",
+        title: "Infra",
+        description: "VPS와 온프레미스 환경 모두 고려해 배포와 운영 구조를 설계합니다.",
+        tags: ["Linux", "Docker", "Nginx", "VPS", "Object Storage", "HTTPS"],
+      },
+      {
+        id: "monitoring",
+        title: "Monitoring",
+        description: "운영 중 상태와 오류를 확인할 수 있도록 로그와 알림 체계를 구성합니다.",
+        tags: ["로그", "상태 모니터링", "알림", "재처리", "장애 추적"],
+      },
+      {
+        id: "integration",
+        title: "Integration",
+        description: "기존 시스템과 외부 API, 데이터베이스, 관리자 CMS를 연결합니다.",
+        tags: ["API 연동", "외부 시스템 연동", "관리자 CMS", "Webhook", "Data Pipeline"],
       },
     ],
     xai: {
@@ -46,35 +62,56 @@ export const techTranslations = {
   en: {
     badge: "CORE TECHNOLOGY",
     title: "Core Technology Capabilities",
-    slogan:
-      "We complete digital transformation with practical AI technology that communicates with the field.",
+    slogan: "Technical capabilities for operation-ready AI services",
     capabilities: [
       {
-        id: "ai-nlp",
-        title: "AI & Natural Language Processing",
-        keywords: [
-          "LLM Chatbots",
-          "RAG Pipelines",
-          "Knowledge Search",
-          "Tool Calling Automation",
-          "Vector Databases",
-        ],
-      },
-      {
-        id: "voice-vision",
-        title: "Voice & Visual Intelligence",
-        keywords: [
-          "Real-time STT",
-          "Unstructured Data Preprocessing",
-          "High-performance OCR for Evidence Extraction",
-          "Satellite & Spatial Data Analysis",
-        ],
-      },
-      {
-        id: "philosophy",
-        title: "Field-Centered Process Design",
+        id: "frontend",
+        title: "Frontend",
         description:
-          "We reject technology for its own sake—first understanding how work actually happens, then designing tailored processes so field staff without programming knowledge can use the system with ease.",
+          "We stably build customer-facing screens and admin interfaces for public and enterprise clients.",
+        tags: ["React", "Vite", "TypeScript", "Tailwind CSS", "ShadCN UI", "Responsive UI"],
+      },
+      {
+        id: "backend",
+        title: "Backend",
+        description:
+          "We design business logic, file processing, AI integration, and admin features with an API-first approach.",
+        tags: ["FastAPI", "Node.js", "REST API", "Auth", "Validation", "Batch Processing"],
+      },
+      {
+        id: "database",
+        title: "Database",
+        description:
+          "We structurally store inquiries, documents, processing status, analytics, and user data.",
+        tags: ["PostgreSQL", "Schema Design", "Query Optimization", "Audit Log"],
+      },
+      {
+        id: "ai-ocr",
+        title: "AI/OCR",
+        description:
+          "We connect document recognition, summarization, search, and workflow support to live services.",
+        tags: ["OCR API", "PaddleOCR", "Document AI", "LLM", "RAG", "Embedding", "Prompt Workflow"],
+      },
+      {
+        id: "infra",
+        title: "Infra",
+        description:
+          "We design deployment and operations for both VPS and on-premises environments.",
+        tags: ["Linux", "Docker", "Nginx", "VPS", "Object Storage", "HTTPS"],
+      },
+      {
+        id: "monitoring",
+        title: "Monitoring",
+        description:
+          "We configure logging and alerting so operational status and errors can be tracked in production.",
+        tags: ["Logging", "Status Monitoring", "Alerts", "Reprocessing", "Incident Tracking"],
+      },
+      {
+        id: "integration",
+        title: "Integration",
+        description:
+          "We connect existing systems with external APIs, databases, and admin CMS platforms.",
+        tags: ["API Integration", "External Systems", "Admin CMS", "Webhook", "Data Pipeline"],
       },
     ],
     xai: {

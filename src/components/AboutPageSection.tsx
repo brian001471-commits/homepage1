@@ -98,15 +98,25 @@ export function AboutPageSection() {
               <h2 className="text-2xl md:text-3xl font-black text-white">{aboutT.introTitle}</h2>
               <div className="w-14 h-1 bg-gradient-to-r from-brand-cyan to-transparent" />
             </motion.div>
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="lg:col-span-8 text-slate-300 text-base md:text-lg leading-[1.9]"
+              className="lg:col-span-8 space-y-5"
             >
-              {aboutT.intro}
-            </motion.p>
+              <p className="text-lg md:text-xl font-bold leading-[1.9] text-white">
+                {aboutT.introLead}
+              </p>
+              {aboutT.introParagraphs.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 24)}
+                  className="text-slate-300 text-base md:text-lg leading-[1.9]"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>

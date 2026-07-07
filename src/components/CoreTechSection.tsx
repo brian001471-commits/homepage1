@@ -2,69 +2,33 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  Bot,
-  Compass,
-  MessageSquareQuote,
-  ScanEye,
-  Sparkles,
-} from "lucide-react";
+import { ArrowLeft, MessageSquareQuote, Sparkles } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { getTechT } from "@/lib/i18n/tech";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-type TechCapability = ReturnType<typeof getTechT>["capabilities"][number];
+type TechStackCard = ReturnType<typeof getTechT>["capabilities"][number];
 
-const CAPABILITY_ICONS = {
-  "ai-nlp": Bot,
-  "voice-vision": ScanEye,
-  philosophy: Compass,
-} as const;
-
-function CapabilityCard({
-  capability,
-  index,
-}: {
-  capability: TechCapability;
-  index: number;
-}) {
-  const Icon = CAPABILITY_ICONS[capability.id as keyof typeof CAPABILITY_ICONS] ?? Bot;
-  const keywords = "keywords" in capability ? capability.keywords : undefined;
-
+function StackCard({ item }: { item: TechStackCard }) {
   return (
-    <Card className="h-full border-slate-800 bg-brand-card/60 hover:border-brand-cyan/35 hover:-translate-y-1 transition-all duration-300 group">
-      <CardHeader className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="w-12 h-12 rounded-xl bg-brand-dark border border-brand-cyan/30 flex items-center justify-center text-brand-cyan group-hover:shadow-[0_0_20px_rgba(0,240,255,0.15)] transition-shadow">
-            <Icon className="w-6 h-6" />
-          </div>
-          <span className="text-[10px] font-mono font-bold text-slate-500 tracking-widest">
-            0{index + 1}
-          </span>
-        </div>
-        <CardTitle className="text-base md:text-lg text-white group-hover:text-brand-cyan transition-colors leading-snug">
-          {capability.title}
+    <Card className="h-full border-slate-700/80 bg-[#1E293B]/50 hover:border-brand-cyan/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-lg md:text-xl font-bold text-white leading-snug">
+          {item.title}
         </CardTitle>
       </CardHeader>
-      <CardContent>
-        {keywords ? (
-          <ul className="flex flex-wrap gap-2">
-            {keywords.map((keyword) => (
-              <li
-                key={keyword}
-                className="text-xs font-medium text-slate-300 px-3 py-1.5 rounded-full border border-slate-700/80 bg-brand-dark/60"
-              >
-                {keyword}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          "description" in capability && (
-            <p className="text-sm leading-relaxed text-slate-400">{capability.description}</p>
-          )
-        )}
+      <CardContent className="space-y-4">
+        <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+        <ul className="flex flex-wrap gap-2">
+          {item.tags.map((tag) => (
+            <li
+              key={tag}
+              className="text-xs font-medium text-brand-cyan px-3 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
       </CardContent>
     </Card>
   );
@@ -137,41 +101,18 @@ export function CoreTechSection() {
           </div>
         </motion.div>
 
-        <div>
-          <div className="hidden lg:grid lg:grid-cols-3 gap-6 md:gap-8">
-            {techT.capabilities.map((capability, idx) => (
-              <motion.div
-                key={capability.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
-                <CapabilityCard capability={capability} index={idx} />
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="lg:hidden">
-            <Tabs defaultValue={techT.capabilities[0].id} className="w-full">
-              <TabsList className="grid grid-cols-1 sm:grid-cols-3 h-auto">
-                {techT.capabilities.map((capability) => (
-                  <TabsTrigger
-                    key={capability.id}
-                    value={capability.id}
-                    className="text-left sm:text-center"
-                  >
-                    {capability.title}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {techT.capabilities.map((capability, idx) => (
-                <TabsContent key={capability.id} value={capability.id}>
-                  <CapabilityCard capability={capability} index={idx} />
-                </TabsContent>
-              ))}
-            </Tabs>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {techT.capabilities.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: idx * 0.06 }}
+            >
+              <StackCard item={item} />
+            </motion.div>
+          ))}
         </div>
 
         <div className="pt-8 border-t border-slate-900 flex justify-center">

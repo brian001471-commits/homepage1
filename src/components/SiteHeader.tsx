@@ -83,11 +83,11 @@ export function SiteHeader() {
             <Link href="/" className={navLinkClass("home")}>
               {navT.home}
             </Link>
-            <Link href="/about" className={navLinkClass("about")}>
-              {navT.about}
-            </Link>
             <Link href="/#research" className={navLinkClass("research")}>
               {navT.research}
+            </Link>
+            <Link href="/about" className={navLinkClass("about")}>
+              {navT.about}
             </Link>
             <Link href="/tech" className={navLinkClass("tech")}>
               {navT.coreTech}

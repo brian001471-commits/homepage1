@@ -11,8 +11,12 @@ export const aboutTranslations = {
     slogan: "AI·데이터 기술로 공공서비스의 일상을 다시 설계합니다.",
     introBadge: "COMPANY OVERVIEW",
     introTitle: "기업 소개",
-    intro:
-      "주식회사 나눔랩은 복잡하고 까다로운 공공·기업 현장의 업무 환경을 깊이 이해하고, 이를 디지털로 전환하여 실제로 즉시 운영 가능한 실용적인 AI 서비스를 구축합니다.",
+    introLead: "현장 업무를 바꾸는 AI 전환 파트너, 주식회사 나눔랩",
+    introParagraphs: [
+      "주식회사 나눔랩은 AI, 데이터, 자동화 기술을 기반으로 공공기관, 지자체, 그리고 기업의 업무 효율을 혁신합니다. 우리는 단순히 유행하는 기술을 설치하는 것에 그치지 않고, 프로그래밍 지식이 없는 현장 직원도 쉽게 다룰 수 있도록 '일하는 방식'을 먼저 분석하여 맞춤형 프로세스를 설계합니다.",
+      "10인 이상의 베테랑 AI/DX 전문 개발 조직을 기반으로 강원도청 행정 플랫폼 개발 및 운영 등 대규모 공공 프로젝트를 안정적으로 이끌어왔으며, 고성능 문서 AI(OCR), 민원콜센터용 STT 및 감정 분석, 설명 가능한 AI(XAI) 등 검증된 자체 기술력을 보유하고 있습니다.",
+      "나눔랩은 공공서비스와 로컬 비즈니스가 마주한 문제를 가장 실용적인 기술로 해결하며, 신뢰할 수 있는 디지털 혁신의 여정을 함께합니다.",
+    ],
     valuesBadge: "CORE VALUES",
     valuesTitle: "3대 핵심 가치",
     values: [
@@ -165,8 +169,13 @@ export const aboutTranslations = {
     slogan: "We redesign everyday public services with AI and data technology.",
     introBadge: "COMPANY OVERVIEW",
     introTitle: "Company Overview",
-    intro:
-      "NanumLab deeply understands complex public and enterprise field environments and transforms them digitally—building practical AI services that are ready to operate from day one.",
+    introLead:
+      "Your AI transformation partner for field operations—NanumLab Co., Ltd.",
+    introParagraphs: [
+      "NanumLab innovates operational efficiency for public agencies, local governments, and enterprises through AI, data, and automation. We go beyond installing trendy technology—we analyze how people actually work and design tailored processes that field staff without programming skills can use with ease.",
+      "Backed by a veteran team of 10+ AI/DX specialists, we have led large-scale public projects including the Gangwon Provincial Office administrative platform. Our proven in-house capabilities span high-performance document AI (OCR), call-center STT with sentiment analysis, and explainable AI (XAI).",
+      "NanumLab solves the challenges facing public services and local businesses with the most practical technology—and partners with you on a trusted digital transformation journey.",
+    ],
     valuesBadge: "CORE VALUES",
     valuesTitle: "Three Core Values",
     values: [
