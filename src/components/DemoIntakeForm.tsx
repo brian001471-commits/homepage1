@@ -1,16 +1,8 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { useTranslations } from "@/hooks/useTranslations";
-import { buildSelectOptions, CUSTOM_INPUT_VALUE } from "@/lib/i18n";
-
-interface SelectOption {
-  value: string;
-  label: string;
-}
 
 const inputClassName =
   "w-full py-3.5 px-4 rounded-lg bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-cyan focus:shadow-[0_0_12px_rgba(0,240,255,0.12)] transition-all";
@@ -21,80 +13,6 @@ function FieldLabel({ children, required = true }: { children: React.ReactNode; 
       {children}
       {required && <span className="text-brand-cyan ml-0.5">*</span>}
     </label>
-  );
-}
-
-function SelectField({
-  value,
-  onChange,
-  options,
-  required = true,
-}: {
-  value: string;
-  onChange: (value: string) => void;
-  options: SelectOption[];
-  required?: boolean;
-}) {
-  return (
-    <div className="relative">
-      <select
-        required={required}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={`${inputClassName} appearance-none pr-10 cursor-pointer`}
-      >
-        {options.map((opt) => (
-          <option key={opt.value === "" ? "__placeholder__" : opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
-    </div>
-  );
-}
-
-function SelectWithCustomInput({
-  label,
-  value,
-  customValue,
-  onChange,
-  onCustomChange,
-  options,
-  customPlaceholder,
-}: {
-  label: string;
-  value: string;
-  customValue: string;
-  onChange: (value: string) => void;
-  onCustomChange: (value: string) => void;
-  options: SelectOption[];
-  customPlaceholder: string;
-}) {
-  const isCustom = value === CUSTOM_INPUT_VALUE;
-
-  const handleChange = (next: string) => {
-    onChange(next);
-    if (next !== CUSTOM_INPUT_VALUE) {
-      onCustomChange("");
-    }
-  };
-
-  return (
-    <div>
-      <FieldLabel>{label}</FieldLabel>
-      <SelectField value={value} onChange={handleChange} options={options} />
-      {isCustom && (
-        <input
-          type="text"
-          required
-          placeholder={customPlaceholder}
-          value={customValue}
-          onChange={(e) => onCustomChange(e.target.value)}
-          className={`${inputClassName} mt-2`}
-        />
-      )}
-    </div>
   );
 }
 
@@ -125,47 +43,75 @@ function ContactIntro() {
   );
 }
 
+function isFormComplete(fields: {
+  title: string;
+  author: string;
+  phone: string;
+  affiliation: string;
+  email: string;
+  content: string;
+}) {
+  return Object.values(fields).every((value) => value.trim().length > 0);
+}
+
 export function DemoIntakeForm() {
-  const { locale } = useLanguage();
   const { demo: t } = useTranslations();
 
-  const mainCategoryOptions = useMemo(
-    () => buildSelectOptions(locale, "main", ["regional-dx", "ai-ict", "manufacturing-dx"]),
-    [locale]
-  );
-  const subCategoryOptions = useMemo(
-    () => buildSelectOptions(locale, "sub", ["defect", "material", "predictive", "consulting"]),
-    [locale]
-  );
-
-  const [mainCategory, setMainCategory] = useState("");
-  const [mainCategoryCustom, setMainCategoryCustom] = useState("");
-  const [subCategory, setSubCategory] = useState("");
-  const [subCategoryCustom, setSubCategoryCustom] = useState("");
+  const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [phone, setPhone] = useState("");
   const [affiliation, setAffiliation] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const resetForm = () => {
+    setTitle("");
+    setAuthor("");
+    setPhone("");
+    setAffiliation("");
+    setEmail("");
+    setContent("");
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !mainCategory || !subCategory) return;
-    if (mainCategory === CUSTOM_INPUT_VALUE && !mainCategoryCustom.trim()) return;
-    if (subCategory === CUSTOM_INPUT_VALUE && !subCategoryCustom.trim()) return;
 
-    setTimeout(() => {
-      setMainCategory("");
-      setMainCategoryCustom("");
-      setSubCategory("");
-      setSubCategoryCustom("");
-      setAuthor("");
-      setPhone("");
-      setAffiliation("");
-      setEmail("");
-      setContent("");
+    const fields = { title, author, phone, affiliation, email, content };
+
+    if (!isFormComplete(fields)) {
+      alert(t.form.validationAlert);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: title.trim(),
+          author: author.trim(),
+          phone: phone.trim(),
+          affiliation: affiliation.trim(),
+          email: email.trim(),
+          content: content.trim(),
+        }),
+      });
+
+      if (!response.ok) {
+        alert(t.form.errorAlert);
+        return;
+      }
+
+      resetForm();
       alert(t.form.successAlert);
-    }, 300);
+    } catch {
+      alert(t.form.errorAlert);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -184,25 +130,15 @@ export function DemoIntakeForm() {
         </div>
 
         <div className="bg-[#1E293B]/30 border border-slate-800 rounded-2xl p-6 md:p-8">
-          <form onSubmit={handleFormSubmit} className="space-y-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <SelectWithCustomInput
-                label={t.form.mainCategory}
-                value={mainCategory}
-                customValue={mainCategoryCustom}
-                onChange={setMainCategory}
-                onCustomChange={setMainCategoryCustom}
-                options={mainCategoryOptions}
-                customPlaceholder={t.form.mainCustomPh}
-              />
-              <SelectWithCustomInput
-                label={t.form.subCategory}
-                value={subCategory}
-                customValue={subCategoryCustom}
-                onChange={setSubCategory}
-                onCustomChange={setSubCategoryCustom}
-                options={subCategoryOptions}
-                customPlaceholder={t.form.subCustomPh}
+          <form onSubmit={handleFormSubmit} noValidate className="space-y-5">
+            <div>
+              <FieldLabel>{t.form.title}</FieldLabel>
+              <input
+                type="text"
+                placeholder={t.form.titlePh}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className={inputClassName}
               />
             </div>
 
@@ -211,7 +147,6 @@ export function DemoIntakeForm() {
                 <FieldLabel>{t.form.author}</FieldLabel>
                 <input
                   type="text"
-                  required
                   placeholder={t.form.authorPh}
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
@@ -222,7 +157,6 @@ export function DemoIntakeForm() {
                 <FieldLabel>{t.form.phone}</FieldLabel>
                 <input
                   type="tel"
-                  required
                   placeholder={t.form.phonePh}
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -236,7 +170,6 @@ export function DemoIntakeForm() {
                 <FieldLabel>{t.form.affiliation}</FieldLabel>
                 <input
                   type="text"
-                  required
                   placeholder={t.form.affiliationPh}
                   value={affiliation}
                   onChange={(e) => setAffiliation(e.target.value)}
@@ -247,7 +180,6 @@ export function DemoIntakeForm() {
                 <FieldLabel>{t.form.email}</FieldLabel>
                 <input
                   type="email"
-                  required
                   placeholder={t.form.emailPh}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -259,7 +191,6 @@ export function DemoIntakeForm() {
             <div>
               <FieldLabel>{t.form.content}</FieldLabel>
               <textarea
-                required
                 rows={6}
                 placeholder={t.form.contentPh}
                 value={content}
@@ -271,9 +202,10 @@ export function DemoIntakeForm() {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-brand-cyan text-brand-dark font-extrabold text-sm tracking-wide hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] hover:bg-[#00dcf5] transition-all duration-300 cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-full bg-brand-cyan text-brand-dark font-extrabold text-sm tracking-wide hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] hover:bg-[#00dcf5] transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {t.form.submit}
+                {isSubmitting ? t.form.submitting : t.form.submit}
               </button>
             </div>
           </form>

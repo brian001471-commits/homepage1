@@ -56,6 +56,7 @@ export function LocationSection() {
                 <div className="space-y-2">
                   <p className="text-lg font-bold text-white leading-relaxed">{location.addressLine1}</p>
                   <p className="text-base text-brand-cyan font-semibold">{location.addressLine2}</p>
+                  <p className="text-base text-slate-300 font-medium">{location.phone}</p>
                 </div>
               </CardContent>
             </Card>

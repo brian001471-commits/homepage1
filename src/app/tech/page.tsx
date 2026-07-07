@@ -15,7 +15,7 @@ export default function TechPage() {
 
       <footer className="border-t border-slate-900/80 py-8">
         <p className="text-center text-[10px] text-slate-500 font-mono">
-          © {new Date().getFullYear()} NANUM LAB Co., Ltd. All rights reserved.
+          © {new Date().getFullYear()} NANUMLAB Co., Ltd. All rights reserved.
         </p>
       </footer>
     </div>

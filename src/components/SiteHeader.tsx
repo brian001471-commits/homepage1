@@ -70,7 +70,7 @@ export function SiteHeader() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <span className="text-brand-cyan text-2xl font-black tracking-widest text-glow-cyan group-hover:opacity-90 transition-opacity">
-            NANUM LAB
+            NANUMLAB
           </span>
           <div className="w-px h-4 bg-slate-700 hidden sm:block" />
           <span className="text-[10px] text-slate-400 font-mono tracking-widest hidden sm:block">

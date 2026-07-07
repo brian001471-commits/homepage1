@@ -29,7 +29,7 @@ export const techTranslations = {
         id: "ai-ocr",
         title: "AI/OCR",
         description: "문서 인식, 요약, 검색, 업무지원 기능을 실제 서비스에 연결합니다.",
-        tags: ["OCR API", "PaddleOCR", "문서AI", "LLM", "RAG", "Embedding", "Prompt Workflow"],
+        tags: ["OCR API", "OCRengine", "문서AI", "LLM", "RAG", "Embedding", "Prompt Workflow"],
       },
       {
         id: "infra",
@@ -51,7 +51,7 @@ export const techTranslations = {
       },
     ],
     xai: {
-      badge: "NANUM LAB DIFFERENTIATOR",
+      badge: "NANUMLAB DIFFERENTIATOR",
       title: "설명 가능한 AI (XAI)",
       subtitle: "현장과 소통하는 차별화 기술",
       description:
@@ -90,7 +90,7 @@ export const techTranslations = {
         title: "AI/OCR",
         description:
           "We connect document recognition, summarization, search, and workflow support to live services.",
-        tags: ["OCR API", "PaddleOCR", "Document AI", "LLM", "RAG", "Embedding", "Prompt Workflow"],
+        tags: ["OCR API", "OCRengine", "Document AI", "LLM", "RAG", "Embedding", "Prompt Workflow"],
       },
       {
         id: "infra",
@@ -115,7 +115,7 @@ export const techTranslations = {
       },
     ],
     xai: {
-      badge: "NANUM LAB DIFFERENTIATOR",
+      badge: "NANUMLAB DIFFERENTIATOR",
       title: "Explainable AI (XAI)",
       subtitle: "Differentiated technology that speaks with the field",
       description:

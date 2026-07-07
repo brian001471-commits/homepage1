@@ -1,7 +1,5 @@
 import type { Locale } from "@/contexts/LanguageContext";
 
-export const CUSTOM_INPUT_VALUE = "custom";
-
 export const demoTranslations = {
   ko: {
     title: "문의하기",
@@ -24,38 +22,24 @@ export const demoTranslations = {
       },
     },
     form: {
-      mainCategory: "대분류",
-      subCategory: "소분류",
+      title: "제목",
       author: "작성자",
       phone: "연락처",
       affiliation: "소속",
       email: "이메일",
       content: "내용",
       submit: "문의하기",
-      select: "선택",
-      customInput: "직접입력",
-      mainCustomPh: "대분류를 직접 입력해 주세요.",
-      subCustomPh: "소분류를 직접 입력해 주세요.",
+      submitting: "전송 중...",
+      titlePh: "문의 제목을 입력해 주세요.",
       authorPh: "홍길동",
       phonePh: "010-1234-5678",
       affiliationPh: "나눔제조 주식회사",
       emailPh: "id@youremail.com",
       contentPh: "문의하실 내용을 입력해 주세요.",
+      validationAlert: "내용을 모두입력하세요.",
+      errorAlert: "문의 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.",
       successAlert:
         "문의가 성공적으로 전달되었습니다. 나눔랩 기술지원 부서에서 이메일로 신속히 답변해 드리겠습니다.",
-    },
-    options: {
-      main: {
-        "regional-dx": "지역 DX / RISE 협력",
-        "ai-ict": "AI / ICT 솔루션 도입",
-        "manufacturing-dx": "제조 공정 디지털화",
-      },
-      sub: {
-        defect: "불량률 감소",
-        material: "원자재 절감",
-        predictive: "예지보전",
-        consulting: "기술 컨설팅",
-      },
     },
     header: {
       back: "홈으로 돌아가기",
@@ -65,7 +49,7 @@ export const demoTranslations = {
     title: "Contact Us",
     intro: {
       p1Parts: {
-        before: "Nanum Lab leads ",
+        before: "NANUMLAB leads ",
         kolas: "data-driven",
         mid: " analysis fused with ",
         ai: "AI technology",
@@ -82,38 +66,24 @@ export const demoTranslations = {
       },
     },
     form: {
-      mainCategory: "Main Category",
-      subCategory: "Sub Category",
+      title: "Subject",
       author: "Name",
       phone: "Phone",
       affiliation: "Organization",
       email: "Email",
       content: "Message",
       submit: "Submit Inquiry",
-      select: "Select",
-      customInput: "Custom Input",
-      mainCustomPh: "Enter main category.",
-      subCustomPh: "Enter sub category.",
+      submitting: "Sending...",
+      titlePh: "Enter inquiry subject.",
       authorPh: "John Doe",
       phonePh: "+82-10-1234-5678",
       affiliationPh: "Nanum Manufacturing Co.",
       emailPh: "id@youremail.com",
       contentPh: "Please describe your inquiry.",
+      validationAlert: "Please fill in all fields.",
+      errorAlert: "Failed to send your inquiry. Please try again later.",
       successAlert:
-        "Your inquiry has been submitted. Nanum Lab support will respond via email shortly.",
-    },
-    options: {
-      main: {
-        "regional-dx": "Regional DX / RISE Partnership",
-        "ai-ict": "AI / ICT Solution Adoption",
-        "manufacturing-dx": "Manufacturing Digitalization",
-      },
-      sub: {
-        defect: "Defect Rate Reduction",
-        material: "Raw Material Savings",
-        predictive: "Predictive Maintenance",
-        consulting: "Technical Consulting",
-      },
+        "Your inquiry has been submitted. NANUMLAB support will respond via email shortly.",
     },
     header: {
       back: "Back to Home",
@@ -123,20 +93,4 @@ export const demoTranslations = {
 
 export function getDemoT(locale: Locale) {
   return demoTranslations[locale];
-}
-
-export type DemoOptionGroup = keyof typeof demoTranslations.ko.options;
-
-export function buildSelectOptions(
-  locale: Locale,
-  group: DemoOptionGroup,
-  keys: string[]
-) {
-  const t = getDemoT(locale);
-  const labels = t.options[group] as Record<string, string>;
-  return [
-    { value: "", label: t.form.select },
-    ...keys.map((key) => ({ value: key, label: labels[key] })),
-    { value: CUSTOM_INPUT_VALUE, label: t.form.customInput },
-  ];
 }

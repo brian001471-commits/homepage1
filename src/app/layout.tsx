@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "응용 소프트웨어 개발 및 AI 기반 디지털 전환(DX)을 선도하는 나눔랩. 범용 AI 솔루션, DX 컨설팅, 지역산업 DX 확산, AI 실무 교육을 제공합니다.",
   keywords: [
     "나눔랩",
-    "Nanum Lab",
+    "NANUMLAB",
     "AI 솔루션",
     "DX 컨설팅",
     "디지털 전환",

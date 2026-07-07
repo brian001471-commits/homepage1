@@ -2,10 +2,10 @@ import type { Locale } from "@/contexts/LanguageContext";
 
 export const aboutTranslations = {
   ko: {
-    badge: "ABOUT NANUM LAB",
+    badge: "ABOUT NANUMLAB",
     pageLabel: "ABOUT US",
     companyName: "주식회사 나눔랩",
-    companyNameEn: "NanumLab Inc.",
+    companyNameEn: "NANUMLAB Inc.",
     brandPersonality:
       "공공 디지털 전환(DX·AX)을 위한 AI·데이터·플랫폼 전문 실행형 ICT 기업",
     slogan: "AI·데이터 기술로 공공서비스의 일상을 다시 설계합니다.",
@@ -14,7 +14,7 @@ export const aboutTranslations = {
     introLead: "현장 업무를 바꾸는 AI 전환 파트너, 주식회사 나눔랩",
     introParagraphs: [
       "주식회사 나눔랩은 AI, 데이터, 자동화 기술을 기반으로 공공기관, 지자체, 그리고 기업의 업무 효율을 혁신합니다. 우리는 단순히 유행하는 기술을 설치하는 것에 그치지 않고, 프로그래밍 지식이 없는 현장 직원도 쉽게 다룰 수 있도록 '일하는 방식'을 먼저 분석하여 맞춤형 프로세스를 설계합니다.",
-      "10인 이상의 베테랑 AI/DX 전문 개발 조직을 기반으로 강원도청 행정 플랫폼 개발 및 운영 등 대규모 공공 프로젝트를 안정적으로 이끌어왔으며, 고성능 문서 AI(OCR), 민원콜센터용 STT 및 감정 분석, 설명 가능한 AI(XAI) 등 검증된 자체 기술력을 보유하고 있습니다.",
+      "10인 이상의 베테랑 AI/DX 전문 개발 조직을 기반으로 지자체 행정 플랫폼 개발 및 운영 등 대규모 공공 프로젝트를 안정적으로 이끌어왔으며, 고성능 문서 AI(OCR), 민원콜센터용 STT 및 감정 분석, 설명 가능한 AI(XAI) 등 검증된 자체 기술력을 보유하고 있습니다.",
       "나눔랩은 공공서비스와 로컬 비즈니스가 마주한 문제를 가장 실용적인 기술로 해결하며, 신뢰할 수 있는 디지털 혁신의 여정을 함께합니다.",
     ],
     valuesBadge: "CORE VALUES",
@@ -46,17 +46,17 @@ export const aboutTranslations = {
         title: "정부 부처 · 지자체 및 공기업",
         description:
           "행정 효율화가 필요한 공공기관 (예: 지자체 행정 포털 구축, 공공 문서 OCR 자동화, 오픈데이터 및 위성정보 기반 도시통계 리포트 자동 생성 등)",
-        highlight: "주요 실적: 강원도청 행정 플랫폼 개발 및 운영 성공 사례 보유",
-      },
-      {
-        title: "대형 콜센터 및 민원 상담 조직",
-        description:
-          "상담 자동화 및 고도화가 필요한 조직 (예: 실시간 STT 음성 인식, 상담 내용 요약, 감정 분석 및 민원 분류 기반의 스마트 AI 민원콜센터 구축)",
+        highlight: "주요 실적: 지자체 행정 플랫폼 개발 및 운영 성공 사례 보유",
       },
       {
         title: "SI 파트너사 및 지역 기반 공공서비스 사업자",
         description:
           "End-to-End 시스템 통합 파트너십 (예: 공공마이데이터 연동 스마트 티켓팅, 벡터 DB 기반의 로컬 검색 및 지역 음식점 추천 플랫폼 협업)",
+      },
+      {
+        title: "대형 콜센터 및 민원 상담 조직",
+        description:
+          "상담 자동화 및 고도화가 필요한 조직 (예: 실시간 STT 음성 인식, 상담 내용 요약, 감정 분석 및 민원 분류 기반의 스마트 AI 민원콜센터 구축)",
       },
     ],
     servicesBadge: "OUR SERVICES",
@@ -160,21 +160,21 @@ export const aboutTranslations = {
     backToHome: "홈으로 돌아가기",
   },
   en: {
-    badge: "ABOUT NANUM LAB",
+    badge: "ABOUT NANUMLAB",
     pageLabel: "ABOUT US",
-    companyName: "NanumLab Inc.",
-    companyNameEn: "NanumLab Inc.",
+    companyName: "NANUMLAB Inc.",
+    companyNameEn: "NANUMLAB Inc.",
     brandPersonality:
       "An execution-focused ICT company specializing in AI, data, and platforms for public digital transformation (DX·AX).",
     slogan: "We redesign everyday public services with AI and data technology.",
     introBadge: "COMPANY OVERVIEW",
     introTitle: "Company Overview",
     introLead:
-      "Your AI transformation partner for field operations—NanumLab Co., Ltd.",
+      "Your AI transformation partner for field operations—NANUMLAB Co., Ltd.",
     introParagraphs: [
-      "NanumLab innovates operational efficiency for public agencies, local governments, and enterprises through AI, data, and automation. We go beyond installing trendy technology—we analyze how people actually work and design tailored processes that field staff without programming skills can use with ease.",
-      "Backed by a veteran team of 10+ AI/DX specialists, we have led large-scale public projects including the Gangwon Provincial Office administrative platform. Our proven in-house capabilities span high-performance document AI (OCR), call-center STT with sentiment analysis, and explainable AI (XAI).",
-      "NanumLab solves the challenges facing public services and local businesses with the most practical technology—and partners with you on a trusted digital transformation journey.",
+      "NANUMLAB innovates operational efficiency for public agencies, local governments, and enterprises through AI, data, and automation. We go beyond installing trendy technology—we analyze how people actually work and design tailored processes that field staff without programming skills can use with ease.",
+      "Backed by a veteran team of 10+ AI/DX specialists, we have led large-scale public projects including local government administrative platforms. Our proven in-house capabilities span high-performance document AI (OCR), call-center STT with sentiment analysis, and explainable AI (XAI).",
+      "NANUMLAB solves the challenges facing public services and local businesses with the most practical technology—and partners with you on a trusted digital transformation journey.",
     ],
     valuesBadge: "CORE VALUES",
     valuesTitle: "Three Core Values",
@@ -206,23 +206,23 @@ export const aboutTranslations = {
         description:
           "Public institutions seeking administrative efficiency (e.g., local government portal development, public document OCR automation, open data and satellite-based urban statistics report generation)",
         highlight:
-          "Key track record: Successful development and operation of the Gangwon Provincial Government administrative platform",
-      },
-      {
-        title: "Large Call Centers & Civil Complaint Consultation Teams",
-        description:
-          "Organizations requiring consultation automation and advancement (e.g., real-time STT speech recognition, call summarization, smart AI civil complaint call centers based on sentiment analysis and complaint classification)",
+          "Key track record: Successful development and operation of local government administrative platforms",
       },
       {
         title: "SI Partners & Region-Based Public Service Providers",
         description:
           "End-to-end system integration partnerships (e.g., public MyData-linked smart ticketing, vector DB-based local search and regional restaurant recommendation platform collaboration)",
       },
+      {
+        title: "Large Call Centers & Civil Complaint Consultation Teams",
+        description:
+          "Organizations requiring consultation automation and advancement (e.g., real-time STT speech recognition, call summarization, smart AI civil complaint call centers based on sentiment analysis and complaint classification)",
+      },
     ],
     servicesBadge: "OUR SERVICES",
     servicesTitle: "Our Services",
     servicesIntro:
-      "NanumLab develops and delivers field-centered public and B2B digital platforms, innovating public and enterprise operations through seamless end-to-end system integration.",
+      "NANUMLAB develops and delivers field-centered public and B2B digital platforms, innovating public and enterprise operations through seamless end-to-end system integration.",
     services: [
       {
         num: "01",
@@ -293,7 +293,7 @@ export const aboutTranslations = {
     ],
     servicesFeaturesLabel: "Key Features",
     techStackBadge: "TECHNICAL STACK",
-    techStackTitle: "NanumLab's Differentiated Technical Capabilities",
+    techStackTitle: "NANUMLAB's Differentiated Technical Capabilities",
     techStack: [
       {
         label: "AI & Natural Language Processing",

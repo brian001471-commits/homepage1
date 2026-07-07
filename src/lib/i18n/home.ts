@@ -47,13 +47,13 @@ export const homeTranslations = {
       ],
     },
     research: {
-      badge: "Nanum Lab Archive",
+      badge: "NANUMLAB Archive",
       title: "연구 성과 및 비즈니스 실적",
       subtitle:
         "AI 솔루션 개발 및 DX 프로젝트 성과를 데이터 바인딩 패턴으로 연계한 신뢰성 지표 정보망입니다.",
       cards: [
         {
-          title: "강원도청 행정 플랫폼 개발 및 운영",
+          title: "지자체 행정 플랫폼 개발 및 운영",
           category: "PUBLIC · GOVERNMENT",
           metric: "지자체 행정 플랫폼 구축",
           description:
@@ -83,6 +83,7 @@ export const homeTranslations = {
       title: "찾아오시는길",
       addressLine1: "춘천시 후석로 462번길 7",
       addressLine2: "춘천ICT벤처센터 307호",
+      phone: "T: 033-912-1004",
       mapQuery: "춘천시 후석로 462번길 7 춘천ICT벤처센터 307호",
       mapReset: "지정 위치로 돌아가기",
     },
@@ -97,7 +98,7 @@ export const homeTranslations = {
       badge: "AI · DX Platform",
       titleLine1: "Intelligent business",
       titleLine2Prefix: "powered by data —",
-      titleHighlight: "Nanum Lab",
+      titleHighlight: "NANUMLAB",
       titleLine2Suffix: "",
       titleLine3: "designs your digital transformation.",
       subtitle:
@@ -109,7 +110,7 @@ export const homeTranslations = {
       badge: "BUILD PROCESS",
       title: "Systematic & Reliable AI Service Build Process",
       subtitle:
-        "From planning through tuning to deployment—NanumLab's veteran experts accompany you end-to-end.",
+        "From planning through tuning to deployment—NANUMLAB's veteran experts accompany you end-to-end.",
       steps: [
         {
           step: "01",
@@ -138,13 +139,13 @@ export const homeTranslations = {
       ],
     },
     research: {
-      badge: "Nanum Lab Archive",
+      badge: "NANUMLAB Archive",
       title: "Research & Business Achievements",
       subtitle:
         "A reliability index network linking AI solution development and DX project outcomes.",
       cards: [
         {
-          title: "Gangwon Provincial Government Platform Development & Operations",
+          title: "Local Government Platform Development & Operations",
           category: "PUBLIC · GOVERNMENT",
           metric: "Local Gov Platform",
           description:
@@ -174,11 +175,12 @@ export const homeTranslations = {
       title: "Directions",
       addressLine1: "7, Huseok-ro 462beon-gil, Chuncheon",
       addressLine2: "Room 307, Chuncheon ICT Venture Center",
+      phone: "T: 033-912-1004",
       mapQuery: "Chuncheon ICT Venture Center, 7 Huseok-ro 462beon-gil, Chuncheon",
       mapReset: "Back to marked location",
     },
     footer: {
-      company: "Nanum Lab Co., Ltd. | CEO: Kim Dae-jun | T: 033-912-1004 E: june@nanumlab.com",
+      company: "NANUMLAB Co., Ltd. | CEO: Kim Dae-jun | T: 033-912-1004 E: june@nanumlab.com",
       address: "Room 307, Chuncheon ICT Venture Center, 7 Huseok-ro 462beon-gil, Chuncheon",
     },
     backToTop: "Back to top",

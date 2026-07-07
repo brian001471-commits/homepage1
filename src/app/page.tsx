@@ -94,7 +94,8 @@ export default function Home() {
                 {navT.contact}
               </Link>
               <a
-                href="#"
+                href="/downloads/nanumlab-company-intro-20260605.pdf"
+                download="나눔랩회사소개_20260605.pdf"
                 className="w-full sm:w-auto px-8 py-4 rounded-full border border-slate-600 text-white hover:text-white hover:border-slate-400 font-extrabold text-sm tracking-wider transition-all duration-300 text-center bg-transparent hover:bg-slate-900/40"
               >
                 {homeT.hero.downloadPdf}
@@ -184,7 +185,7 @@ export default function Home() {
       <footer className="mt-auto bg-brand-dark border-t border-slate-900/80 py-12 relative z-10 select-none">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center md:items-start gap-2">
           <span className="text-white font-black tracking-widest text-lg">
-            NANUM LAB
+            NANUMLAB
           </span>
           <p className="text-[12px] text-white font-mono">{homeT.footer.company}</p>
           <p className="text-[12px] text-white font-mono">{homeT.footer.address}</p>

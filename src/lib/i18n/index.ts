@@ -1,6 +1,6 @@
 import type { Locale } from "@/contexts/LanguageContext";
 import { getAboutT } from "./about";
-import { getDemoT, buildSelectOptions, CUSTOM_INPUT_VALUE } from "./demo";
+import { getDemoT } from "./demo";
 import { getHomeT } from "./home";
 import { getNavT } from "./nav";
 import { getTechT } from "./tech";
@@ -21,6 +21,4 @@ export {
   getAboutT,
   getDemoT,
   getTechT,
-  buildSelectOptions,
-  CUSTOM_INPUT_VALUE,
 };

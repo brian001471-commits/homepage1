@@ -24,7 +24,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const VALUE_ICONS = [Wrench, ShieldCheck, CloudCog] as const;
-const TARGET_ICONS = [Building2, Headphones, Handshake] as const;
+const TARGET_ICONS = [Building2, Handshake, Headphones] as const;
 const SERVICE_ICONS = [QrCode, MapPin, Headphones, Satellite, Box, Layers] as const;
 const TECH_STACK_ICONS = [Bot, ScanEye, MessageSquareQuote, Compass] as const;
 
